@@ -1,0 +1,30 @@
+From: "PayPal Security" <security@paypa1-secure.com>
+Reply-To: attacker@gmail.com
+Return-Path: <bounce@spamserver.ru>
+To: victim@example.com
+Subject: URGENT: Your PayPal account has been suspended - Immediate action required
+Message-ID: <abc123@malicious-server.com>
+Date: Thu, 10 Apr 2026 08:00:00 +0000
+X-Mailer: PHPMailer 6.0
+DKIM-Signature: v=1; a=rsa-sha256; d=paypa1-secure.com; s=default;
+Received-SPF: softfail (domain of paypa1-secure.com does not designate this IP as permitted sender)
+Authentication-Results: mx.example.com;
+       dkim=fail reason="signature verification failed";
+       dmarc=fail action=none;
+Content-Type: text/plain; charset=UTF-8
+
+Dear Valued Customer,
+
+Your PayPal account has been SUSPENDED due to unusual activity!
+
+You must verify your account immediately or it will be permanently deleted.
+
+Click here to verify: http://192.168.1.105/paypal/login.php
+
+If the above link doesn't work, try: http://bit.ly/paypal-verify-now
+
+Or visit: http://secure.paypal.account.verify.malicious-site.com/login
+
+Act now — your account expires in 24 hours!
+
+PayPal Security Team
