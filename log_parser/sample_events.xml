@@ -1,0 +1,130 @@
+<Events>
+
+  <!-- Failed logon attempts — brute force -->
+  <Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+    <System>
+      <EventID>4625</EventID>
+      <TimeCreated SystemTime="2026-04-10T02:13:01Z"/>
+      <Computer>CORP-PC-01</Computer>
+      <Channel>Security</Channel>
+    </System>
+    <EventData>
+      <Data Name="TargetUserName">administrator</Data>
+      <Data Name="IpAddress">192.168.1.55</Data>
+      <Data Name="LogonType">3</Data>
+    </EventData>
+  </Event>
+
+  <Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+    <System>
+      <EventID>4625</EventID>
+      <TimeCreated SystemTime="2026-04-10T02:13:05Z"/>
+      <Computer>CORP-PC-01</Computer>
+      <Channel>Security</Channel>
+    </System>
+    <EventData>
+      <Data Name="TargetUserName">administrator</Data>
+      <Data Name="IpAddress">192.168.1.55</Data>
+      <Data Name="LogonType">3</Data>
+    </EventData>
+  </Event>
+
+  <Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+    <System>
+      <EventID>4625</EventID>
+      <TimeCreated SystemTime="2026-04-10T02:13:09Z"/>
+      <Computer>CORP-PC-01</Computer>
+      <Channel>Security</Channel>
+    </System>
+    <EventData>
+      <Data Name="TargetUserName">administrator</Data>
+      <Data Name="IpAddress">192.168.1.55</Data>
+      <Data Name="LogonType">3</Data>
+    </EventData>
+  </Event>
+
+  <!-- Successful logon after brute force -->
+  <Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+    <System>
+      <EventID>4624</EventID>
+      <TimeCreated SystemTime="2026-04-10T02:13:45Z"/>
+      <Computer>CORP-PC-01</Computer>
+      <Channel>Security</Channel>
+    </System>
+    <EventData>
+      <Data Name="TargetUserName">administrator</Data>
+      <Data Name="IpAddress">192.168.1.55</Data>
+      <Data Name="LogonType">3</Data>
+    </EventData>
+  </Event>
+
+  <!-- Attacker runs mimikatz -->
+  <Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+    <System>
+      <EventID>4688</EventID>
+      <TimeCreated SystemTime="2026-04-10T02:15:00Z"/>
+      <Computer>CORP-PC-01</Computer>
+      <Channel>Security</Channel>
+    </System>
+    <EventData>
+      <Data Name="SubjectUserName">administrator</Data>
+      <Data Name="NewProcessName">C:\Users\administrator\Downloads\mimikatz.exe</Data>
+    </EventData>
+  </Event>
+
+  <!-- Attacker creates backdoor account -->
+  <Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+    <System>
+      <EventID>4720</EventID>
+      <TimeCreated SystemTime="2026-04-10T02:16:00Z"/>
+      <Computer>CORP-PC-01</Computer>
+      <Channel>Security</Channel>
+    </System>
+    <EventData>
+      <Data Name="TargetUserName">backdoor_user</Data>
+      <Data Name="SubjectUserName">administrator</Data>
+    </EventData>
+  </Event>
+
+  <!-- Attacker adds backdoor account to admins -->
+  <Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+    <System>
+      <EventID>4732</EventID>
+      <TimeCreated SystemTime="2026-04-10T02:16:30Z"/>
+      <Computer>CORP-PC-01</Computer>
+      <Channel>Security</Channel>
+    </System>
+    <EventData>
+      <Data Name="TargetUserName">backdoor_user</Data>
+      <Data Name="SubjectUserName">administrator</Data>
+    </EventData>
+  </Event>
+
+  <!-- Attacker installs malicious service -->
+  <Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+    <System>
+      <EventID>7045</EventID>
+      <TimeCreated SystemTime="2026-04-10T02:17:00Z"/>
+      <Computer>CORP-PC-01</Computer>
+      <Channel>Security</Channel>
+    </System>
+    <EventData>
+      <Data Name="ServiceName">MaliciousService</Data>
+      <Data Name="ServiceFileName">C:\Windows\Temp\payload.exe</Data>
+    </EventData>
+  </Event>
+
+  <!-- Attacker clears logs to cover tracks -->
+  <Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+    <System>
+      <EventID>1102</EventID>
+      <TimeCreated SystemTime="2026-04-10T02:18:00Z"/>
+      <Computer>CORP-PC-01</Computer>
+      <Channel>Security</Channel>
+    </System>
+    <EventData>
+      <Data Name="SubjectUserName">administrator</Data>
+    </EventData>
+  </Event>
+
+</Events>
