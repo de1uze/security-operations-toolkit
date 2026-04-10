@@ -23,7 +23,6 @@ console = Console()  # Rich's output engine — used instead of print()
 import os
 from dotenv import load_dotenv
 load_dotenv(dotenv_path="/Users/dominoexe/Documents/Projects/security-operations-toolkit/ioc_checker/.env")
-print("KEY:", os.getenv("38091f5ec7f00e1f72d17998506ba33bc9e08e59801cce574b953166ef1c6fe7"))
 
 
 VIRUSTOTAL_API_KEY = os.getenv("VIRUSTOTAL_API_KEY")
